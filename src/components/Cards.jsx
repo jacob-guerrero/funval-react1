@@ -3,31 +3,37 @@ import Card from "./Card";
 export function Cards() {
   const people = [
     {
+      id: 1,
       photo: "/images/photo1.png",
       name: "Bill Mahoney",
       position: "Product Owner",
     },
     {
+      id: 2,
       photo: "/images/photo2.png",
       name: "Saba Cabrera",
       position: "Art Director",
     },
     {
+      id: 3,
       photo: "/images/photo3.png",
       name: "Shae Le",
       position: "Tech Lead",
     },
     {
+      id: 4,
       photo: "/images/photo4.png",
       name: "Skylah Lu",
       position: "Ux Designer",
     },
     {
+      id: 5,
       photo: "/images/photo5.png",
       name: "Griff Richards",
       position: "Developer",
     },
     {
+      id: 6,
       photo: "/images/photo6.png",
       name: "Stan John",
       position: "Developer",
@@ -36,36 +42,16 @@ export function Cards() {
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 px-4 py-6 gap-4 justify-center max-w-5xl mx-auto md:py-8">
-      <Card
-        photo={people[0].photo}
-        name={people[0].name}
-        position={people[0].position}
-      />
-      <Card
-        photo={people[1].photo}
-        name={people[1].name}
-        position={people[1].position}
-      />
-      <Card
-        photo={people[2].photo}
-        name={people[2].name}
-        position={people[2].position}
-      />
-      <Card
-        photo={people[1].photo}
-        name={people[1].name}
-        position={people[1].position}
-      />
-      <Card
-        photo={people[2].photo}
-        name={people[2].name}
-        position={people[2].position}
-      />
-      <Card
-        photo={people[1].photo}
-        name={people[1].name}
-        position={people[1].position}
-      />
+      {people.map((card) => {
+        return (
+          <Card
+            photo={card.photo}
+            name={card.name}
+            position={card.position}
+            key={card.id}
+          />
+        );
+      })}
     </div>
   );
 }

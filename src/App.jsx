@@ -18,6 +18,12 @@ function App() {
       </div>
 
       <Cards />
+
+      <img
+        src="/icons/dark_mode.svg"
+        alt="toggle mode"
+        className="absolute top-3 right-3"
+      />
     </>
   );
 }
